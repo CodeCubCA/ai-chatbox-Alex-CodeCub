@@ -19,7 +19,23 @@ def init_groq_client():
     """Initialize Groq API client"""
     api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
-        st.error("⚠️ Please set GROQ_API_KEY in your .env file")
+        st.error("⚠️ **GROQ_API_KEY is missing!**")
+        st.info("""
+        **For Streamlit Cloud:**
+        1. Go to your app settings
+        2. Click on "Secrets" in the left sidebar
+        3. Add your Groq API key:
+        ```
+        GROQ_API_KEY = "your_groq_api_key_here"
+        ```
+        4. Click "Save"
+
+        **For local development:**
+        1. Copy `.env.example` to `.env`
+        2. Add your Groq API key to the `.env` file
+
+        Get your free API key at: https://console.groq.com/keys
+        """)
         st.stop()
     return Groq(api_key=api_key)
 
