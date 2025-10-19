@@ -132,6 +132,9 @@ st.title("📚 My Study Buddy AI Assistant")
 st.markdown(f"**Current Personality:** {PERSONALITIES[personality_choice]['icon']} {PERSONALITIES[personality_choice]['name']}")
 st.divider()
 
+# Version info (helps trigger redeployment)
+# v1.0.1
+
 # Initialize session state
 if "messages" not in st.session_state:
     st.session_state.messages = []
