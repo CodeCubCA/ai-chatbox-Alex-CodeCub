@@ -128,7 +128,7 @@ with st.sidebar:
     st.caption("🤖 Model: llama-3.3-70b-versatile")
 
 # Main Title
-st.title("📚 My Study Buddy AI Assistant")
+st.title("📚 Study Buddy AI Assistant")
 st.markdown(f"**Current Personality:** {PERSONALITIES[personality_choice]['icon']} {PERSONALITIES[personality_choice]['name']}")
 st.divider()
 
