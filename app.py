@@ -133,7 +133,7 @@ st.markdown(f"**Current Personality:** {PERSONALITIES[personality_choice]['icon'
 st.divider()
 
 # Version info (helps trigger redeployment)
-# v1.0.1
+# v2.0.0
 
 # Initialize session state
 if "messages" not in st.session_state:
