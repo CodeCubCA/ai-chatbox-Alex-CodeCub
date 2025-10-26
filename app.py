@@ -8,7 +8,7 @@ load_dotenv()
 
 # Page configuration
 st.set_page_config(
-    page_title="My Study Buddy AI Assistant",
+    page_title="Study Buddy AI Assistant v2.0",
     page_icon="📚",
     layout="wide"
 )
@@ -128,7 +128,7 @@ with st.sidebar:
     st.caption("🤖 Model: llama-3.3-70b-versatile")
 
 # Main Title
-st.title("📚 Study Buddy AI Assistant")
+st.title("📚 Study Buddy AI Assistant v2.0")
 st.markdown(f"**Current Personality:** {PERSONALITIES[personality_choice]['icon']} {PERSONALITIES[personality_choice]['name']}")
 st.divider()
 
