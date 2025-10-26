@@ -139,10 +139,28 @@ st.divider()
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Display chat history
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+# Display welcome message when no chat history
+if len(st.session_state.messages) == 0:
+    st.markdown("### 👋 Welcome to Study Buddy AI Assistant!")
+    st.markdown("""
+    I'm your personal learning companion, here to help you with:
+
+    - 📖 **Answering study questions** - Get clear explanations for any topic
+    - 💡 **Explaining complex concepts** - Break down difficult subjects into simple terms
+    - ✍️ **Tutoring homework and essays** - Get guidance on assignments
+    - 🎯 **Creating study plans** - Organize your learning journey
+    - 📝 **Summarizing and reviewing topics** - Reinforce your understanding
+    - 🧠 **Providing learning method suggestions** - Improve your study techniques
+
+    **Choose your preferred AI personality from the sidebar and let's chat!** 🚀
+
+    *Ask me anything to get started...*
+    """)
+else:
+    # Display chat history
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
 
 # User input
 if prompt := st.chat_input("💬 Ask your study question..."):
